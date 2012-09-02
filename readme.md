@@ -29,13 +29,13 @@ HTML5mash is a project template based on popular popular technologies.  It elega
 
 ##Download
 
-Just click the smash.zip file then View Raw and extract it.
+Just click the HTML5Mash.zip file then View Raw and extract it.
 
 ##Docs
 
 ### Web Server
 
-HTML5Smash comes with a very small, windows-only web server for testing purposes and demos.
+HTML5mash comes with a very small, windows-only web server for testing purposes and demos.
 
 ######Mongoose https://github.com/valenok/mongoose for Windows
 
