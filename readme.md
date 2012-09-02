@@ -86,4 +86,4 @@ If people use this I will maintain
 
 ### License
 
-All of my original working on this project is in the public domain.  All the components this is based upon are under their respective licenses.
+All of my original working on this project is in the public domain ([See the Unlicense](http://unlicense.org/)).  All other components this work is based upon are under their respective licenses.
