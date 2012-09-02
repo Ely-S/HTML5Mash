@@ -74,7 +74,11 @@ See [Less Elements](http://lesselements.com/)
 
 ## Contributing
 
-Contribution is appreciated.  Anyone and everyone is welcome to help out.
+Contribution is appreciated.  Anyone and everyone is welcome to help out.  It would be nice for somebody to make a logo for the project.
+
+##Maintanence
+
+If people use this I will mantain
 
 
 ### License
