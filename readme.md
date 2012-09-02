@@ -27,48 +27,52 @@ HTML5mash is a project template based on popular popular technologies.  It elega
 * Lightweight development server for Windows
 * And more
 
+##Download
+
+Just click the smash.zip file then View Raw and extract it.
+
 ##Docs
 
 ### Web Server
 
 HTML5Smash comes with a very small, windows-only web server for testing purposes and demos.
 
-######Mongoose https://github.com/valenok/mongoose for windows
+######Mongoose https://github.com/valenok/mongoose for Windows
 
 To use it just double click mongoose.exe and it will serve your site at port 8080.
 
+From the Mongoose website
 > Mongoose executable does not depend on any external library or configuration. If it is copied to any directory and launched from there, it starts to serve that directory on port 8080 (so to access files, go to http://localhost:8080). If some additional config is required - for example, different listening port or IP-based access control, then a mongoose.conf file with respective options can be created in the same directory where executable lives. This makes Mongoose perfect for all sorts of demos, quick tests, file sharing, and Web programming.
 
 
 ### Loading scripts
 
-Script loading is done in the loader.js file.  It is the only JS file linked by the body.
+Script loading is done in the loader.js file.  It is the only javascript file linked to by the body.
 
 see [Yepnope](http://yepnope.js/)
 
 ### Plugins.js
 
-The Bootstrap.js that comes with ever download of twitter bootstrap is just all of Twitter Bootstrap's JQuery plugins in one file.  There is little chance anyone needs all of them.  This package ships with all of Bootstrapp's plugins with minified versions so you can put the just the ones you need in plugins.js. 
+The bootstrap.js file that comes with every download of Twitter Bootstrap just containes all of Twitter Bootstrap's JQuery plugins in one file but there is little chance anyone needs them all.  HTML5mash ships with all of Bootstrapp's plugins and minified versions so you can put the just the ones you need in plugins.js. 
 
 ### Using Less
 ######*you must have Less installed*
 
 You can install less with NPM or Ruby Gems.
 
-If you use Less uncomment the commented-out link in the head of index.html and delete the links to CSS.  The way Less works is that it compiles all the styles into one stylesheet.  Take a look at styles.less in the less folder.  Also, feel free to delete the CSS directory.
+If you use Less uncomment the commented-out link in the head of index.html and delete the links to CSS.  Less will combine all the Less files and compile all the style rules into one stylesheet.  Take a look at styles.less in the less folder.  Also, feel free to delete the CSS directory.
 
-For Windows users who do not like the command line just double run the Compile.bat file.  It contains the same command to compile the style.less on Unix systems.
+For Windows users who do not like the command line just run the Compile.bat file.  It contains the same command as needed Unix systems to compile the Less.
 
 `lessc style.less > style.css`
 
 ### Bootstrap
 
-Bootstrap is build out of many Less files.  The main bootstrap file can be found in bootstrap.less.  Delete the import statements you don't need to get the smallest build of bootstrap you need.
-
+Twitter Bootstrap is built out of many Less files.  The main Bootstrap file can be found in bootstrap.less.  It imports one Less file per component so just delete the import statements to get the smallest build of Bootstrap you need.  You can also do the same for responsive.less to not adapt for the screen sizes you don't want to support.
 
 ### Mixins 
 
-HTML5Smash includes the Less mixins that come with bootstrap and Less elements.
+HTML5mash includes the Less mixins that come with Bootstrap in addition to extra mixins from  Less Elements.
 
 See [Less Elements](http://lesselements.com/)
 
@@ -78,10 +82,8 @@ Contribution is appreciated.  Anyone and everyone is welcome to help out.  It wo
 
 ##Maintanence
 
-If people use this I will mantain
-
+If people use this I will maintain
 
 ### License
 
-
-All of my original working on this project is in the public domain.  All the components this is based upon are under their respective licenses.
+All of my original working on this project is in the public domain ([See the Unlicense](http://unlicense.org/)).  All other components this work is based upon are under their respective licenses.
