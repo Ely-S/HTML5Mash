@@ -1,1 +1,1 @@
-lessc style.less > style.css
+lessc -x style.less > ../css/style.css

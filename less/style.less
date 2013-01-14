@@ -1,15 +1,9 @@
-@import "stylesheets/bootstrap.less";
-
-body {
-  padding-top: 60px;
-  padding-bottom: 40px;
-}
-
-@import "stylesheets/responsive.less";
-@import "stylesheets/mixin-elements.less";
+@import "stylesheets/components";
+@import "stylesheets/responsive";
+@import "stylesheets/dss";  // Less mixins
 
 /* ===== Primary Styles ========================================================
-   Author:
+   Author: 
    ========================================================================== */
 
 
@@ -23,23 +17,12 @@ body {
 
 
 
-/* chromeframe styles */
 
- .chromeframe { margin: 0.2em 0; background: #ccc; color: black; padding: 0.2em 0; }
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   Theses examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
 
-media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-}
 
-media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-       only screen and (min-resolution: 144dpi) {
-    /* Style adjustments for high resolution devices */
-}
 
-@import "stylesheets/print.less";
+
+
+
+@import "stylesheets/print"; // include print styles

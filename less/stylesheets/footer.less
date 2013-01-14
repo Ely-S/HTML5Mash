@@ -1,0 +1,28 @@
+// Based of Sticky Footer by Ryan Fait
+// http://ryanfait.com/
+
+html,
+body {
+    height: 100%;
+}
+
+// Wrapper for page content to push footer down */
+#wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    // Negative indent footer by it's height
+    margin: 0 auto -@footerHeight;
+}
+
+#push, #footer {
+    height: @footerHeight;
+}
+
+footer {
+    background-color: @footerBackground;
+}
+
+footer > .container {
+    padding: 20px 0;
+}
