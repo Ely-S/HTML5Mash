@@ -1,53 +1,45 @@
 # HTML5Mash 
+*A -project in the works- more advanced project template based on HTML5Boilerplate integrated into Twitter Bootstrapp with a few improvements.*
 
-*A more advanced project template based on HTML5Boilerplate integrated into Twitter Bootstrapp and with a few improvements.*
 
-
-<a href="downlaod"><img style="border: 0px solid black;" src ="./html5.png" title="Download!" height="400px"/></a>
-
-It elegantly combindes HTML5boilerplate, Twitter Bootstrap, Jquery, Modernizr/Yepnope, Less or CSS, Respond.js, HTML5Shim.
- 
-> HTML5 Boilerplate is a professional front-end template that helps you build fast, robust, adaptable, and future-proof websites. Spend more time developing and less time reinventing the wheel.
-
+<a href="https://github.com/Ely-S/html5mash/archive/master.zip" title="download"><img style="border: 0px solid black;" src ="https://raw.github.com/Ely-S/html5mash/master/html5.PNG" title="Download!" height="400px"/></a>
 
 ## Overview
 
 * Based on Less
-* The Bootstrap 2.2.2, JQuery 1.8.3, and HTML5Boilerplate 4.0.2
+* The Bootstrap 2.2.2, JQuery 1.8.3, and HTML5Boilerplate 4.0.3
 * HTML5Boilerplate's print styles
-* index.html template
-* Respond.js and HTML5Shim+htlm5printshiv in a conditional comment so IE behaves.
-* Script loader.
+* Bootstrap + HTML5Boilerplate index.html template
+* Respond.js and HTML5Shim+HTML5printshiv
 * HTML5Boilerplate script.js, plugins.js, and style.css templates
-* Mixins for Less provided Less DSS
+* Mixins for Less
 * Background patterns
+* Better IE classes
 * Included docs
 * Lightweight development server for Windows
+* Sticky Footer component
 
 ##Download
-To Download CLICK THE BIG 5
+CLICK THE BIG 5
 
-#Docs
+##Docs
 
-### CSS
+## Less
+HTML5Mash uses Less.  The styles.less file is compiled to style.css.
 
-There are three less files imported into your styles.less file: `stylesheets/components.less`, `stylesheets/responsive.less` and `stylesheets/print.less`.
+There are three less files imported into your styles.less file: `stylesheets/components`, `stylesheets/responsive` and `stylesheets/print`.
 
-`stylesheets/components.less` is based off of the `bootstrap.less` from 
-Twitter Bootstrap.  **All it does is import a file for every component** so you can manage the components you want by commenting out the import statements.  It contains three new imports `HTML5Bolerplate.less`, `dss.less` and `footer.less` which cointain the default styles of HTML5Boilerplate, Less Dnamic StyleSheet mixins and the footer component.
+`stylesheets/components` contains all the Twitter Bootstrap and additional components.  **All it does is import a less file containing styles for each  component** so you remove components from your stylesheet by commenting out import statements.  
 
-`stylesheets/responsive.less` makes it responsive.  **All it does is import a less file for each screen-width**.  You can modify thei mports to include styles for different device widths.
+`stylesheets/responsive` makes contains Bootstrap's Responsive styles.  **All it does is import a less file containing styles for each screen-width**.  
 
-`stylesheets/print.less` is at the end and **contains the print styles from HTML5Boilerplate**.  It should be inlined to avoid another HTTP request.
+`stylesheets/print` contains the print styles from HTML5Boilerplate.  
 
+`stylesheets/dss` contains useful mixins from [Less DSS](http://mrkrupski.github.com/LESS-Dynamic-Stylesheet/)
 
-### Mixins 
+## Javascript
 
-[Mixins are included from Less DSS.](http://mrkrupski.github.com/LESS-Dynamic-Stylesheet/)
-
-### Javascript
-
-Javascript is organized like this.
+Script are organized like this.
 
 	JS 	-> 	
 			Libs		->
@@ -63,19 +55,18 @@ Javascript is organized like this.
 			script.js
 
 
-The bootstrap.js file that ships with every download of Twitter Bootstrap containes all of Bootstrap's JQuery plugins in one file, but there is little chance that anyone needs all of them.  We only load HTML5Boilerplate's plugins.js and you can put just the plugins you need in it and load them all at once.
+The bootstrap.js file that ships with every download of Twitter Bootstrap contains all of Bootstrap's JQuery plugins in one file, but there is little chance that anyone needs them all.  We only load HTML5Boilerplate's plugins.js and so can put the plugins you need in it to load them all at once.
 
-respondshiv.min.js containes Respond.js and HTML5Shiv and HTML5 Printshiv so IE parses mediaqueries and desplays HTML5 elements.
+`respondshiv.min.js` containes Respond.js, HTML5Shiv and HTML5Printshiv so IE parses basic media-queries and displays HTML5 elements correctly.
 
-JQuery.placeholder.min.js is a pollyfill for the placeholder attribute on input tags used in an example feature detect.
+JQuery.placeholder.min.js is a pollyfill for the placeholder attribute on input tags used in the example feature detect.
 
 ####Script Loading
 
-Script loading is done in the loader.js file.  It is the only javascript file linked to in the head.
+Script loading is done in the `loader.js` file.
+The default scipt loader is [Yepnope](http://yepnope.js/), (A.K.A .Modernizr.load) beause it is small and fast.
 
-The default scipt loader is [Yepnope](http://yepnope.js/) (A.K.A .Modernizr.load) beause it is small and fast.
-
-It would ship with Modernizr but you should use your own custom build.  HTML5 Smash contains Yepnope.js, AKA Modernizr.load, the script loader of Modernizr.  You can use it to conditionally load your scripts in parallel and seamlessly drop in a custom build of Modernizr later.
+It would ship with Modernizr but there is no telling what features you will use.  You can start with Yepnope and seamlessly drop in a custom build of Modernizr later.
 
 Personally, I like doing my own feature detects so Yepnope is more than enough.
 
@@ -84,44 +75,47 @@ See Also
 1. http://diveintohtml5.info/everything.html
 2. http://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-Browser-Polyfills
 
-### Using Less
-######*you must have Less installed*
+## Using Less
+####*you must have Less installed*
 
-You can install less with NPM or Ruby Gems.
+For Windows users who do not like the command line, doubleclick the Compile.bat file.  It contains the same command needed on Unix systems to compile the Less.
 
-For Windows users who do not like the command line, doubleclick the Compile.bat file.  It contains the same command as needed on Unix systems to compile the Less.
+`lessc -x style.less > ../css/style.css`
 
-`lessc style.less > style.css`
+It would be clever to replace it with your own compile script, e.g.
 
+    lessc -x style.less > ../css/style.css
+    yui-compressor -o ../css/style.min.css ../css/style.css
 
-It would be clever to replace it with your own compile script.
+See also
 
-### Sticky Footer
+1. Simpless http://wearekiss.com/simpless
 
-The Sticky Footer is a unique component based off work by [Ryan Fait]().  It a particularly troublesome to implement and fairly common.  This is how it works.
+## Sticky Footer
+
+The Sticky Footer is a unique component based off work by [Ryan Fait](http://ryanfait.com/sticky-footer/).  It a particularly troublesome to implement and fairly common.  This is how it works.
 
 	<body>
 	  <div id="wrapper">
-        <div id="content" class="container">
+        <div class="container">
           <h1>Title</h1>
         </div>
 	    <div id="push"></div>
       </div>
 	  <footer id="footer">
-	    <div class="container">
-    	  <p>Footer</p>
+	    <div class="container">               
  	    </div>
 	  </footer>
 	</body>
 
-Everything in the body but the footer goes in a div with a `wrapper` id, the last element of which is a div with the `push` id.  The footer can be any block-level element with `id="footer"`.
+Everything in the body but the footer goes in a div with a `id="wrapper"`, the last element of which is a div with `id="push"`.  The footer is a footer element with `id="footer"`.
 
 It uses the following variables defined in `variables.less`
 
-	@footerBackground: lighten(@grayLighter, 3%);
+	@footerBackground: lighten(@grayLighter, 2%);
 	@footerHeight: 80px;
 
-#### HTML Classess
+## HTML Classess
 
     <!doctype html>
     <!--[if lt IE 7]>  <html class="no-js ie ie6 lte7 lte8 lte9">   <![endif]-->
@@ -132,38 +126,38 @@ It uses the following variables defined in `variables.less`
 
 http://paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/
 
-HTML5Mash takes html5boilerplate's IE conditional stlyehseets another step and lets you target indiivual versions.
+HTML5Mash takes HTML5Boilerplate's IE conditional classes another step and lets you target individual IE versions.
 
-The `no-js` class is replaced by the `js` class if
-### Other
+The `no-js` class is replaced by the `js` class if Javascript is detected.
 
-The center tag has been depreciated.  The a utility class `.center` centers elements with set widths using CSS. See http://www.w3.org/Style/Examples/007/center.en.html
-
-	.center {
-    	display: block;
-	    margin-left: auto;
-    	margin-right: auto;
-	}
-
-
-Using the noscript tag is an [unreliable way to detect javascript.](http://www.tigerheron.com/article/2007/10/alternative-noscript-tag) Since the `.no-js` is on the html5 element if javascript does not run, it can be used to tell wether javascript is enabled. You can use the `.noscript` utility class instead of basic noscript tags.
-
-	<div class="noscript>Please Enable Javascript</div>
-    
 ### Web Server
 
-HTML5Smash comes with a very small, windows-only web server for testing purposes and demos.
+HTML5Mash comes with a very small, windows-only web server for testing purposes and demos.
 
 **[Mongoose](https://github.com/valenok/mongoose) for Windows**
 
-_Linux Peeps, try `$ python -m SimpleHTTPServer`_
+_On Linux try, try `$ python -m SimpleHTTPServer`_
 
-To use it just double click mongoose.exe and it will serve your site at port 8080.
+Just double click mongoose.exe and it will serve up your site at port 8080.
 
 From the Mongoose website
 > Mongoose executable does not depend on any external library or configuration. If it is copied to any directory and launched from there, it starts to serve that directory on port 8080 (so to access files, go to http://localhost:8080). If some additional config is required - for example, different listening port or IP-based access control, then a mongoose.conf file with respective options can be created in the same directory where executable lives. This makes Mongoose perfect for all sorts of demos, quick tests, file sharing, and Web programming.
 
 
+## Other
+
+The center tag has been depreciated.  The a utility class `.center` centers elements with set widths. 
+
+Using the noscript tag is an [unreliable way to detect javascript.](http://www.tigerheron.com/article/2007/10/alternative-noscript-tag).  You can use the `.noscript` class instead of basic noscript tags to more reliable determine if javascript runs.
+
+	<div class="noscript>Please Enable Javascript</div>
+    
+See Also 
+
+1. http://www.w3.org/Style/Examples/007/center.en.html
+2. http://www.tigerheron.com/article/2007/10/alternative-noscript-tag
+
+
 ## Logo
 
-To Support HTML5 put the logo on your website.  It is licensed under a [Creative Commons Attribution 3.0 Unported License.](http://creativecommons.org/licenses/by/3.0/)
+To support HTML5, put an [HTML5 logo](http://www.w3.org/html/logo/) on your website.  They are licensed under a [Creative Commons Attribution 3.0 Unported License.](http://creativecommons.org/licenses/by/3.0/)
